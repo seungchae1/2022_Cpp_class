@@ -3,15 +3,15 @@
 //std:: ¾È½áµµ µÊ
 using namespace std;
 
-void plus2(int* num)
+void plus2(int& num)
 {
-	*num += 2;
+	num += 2;
 }
 
 int main(void)
 {
 	int a = 3;
-	plus2(&a);
+	plus2(a);
 
 	cout << a << endl;	//5
 
