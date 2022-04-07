@@ -45,5 +45,8 @@
     <ClCompile Include="C++기본\02-06 string 대입.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="02-07 string 덧붙이기(append).cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
