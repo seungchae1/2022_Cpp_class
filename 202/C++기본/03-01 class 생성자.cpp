@@ -29,15 +29,15 @@ int main()
 
 Student::Student()
 {
-	nHaknun = 1234;
-	sName = "이사랑";
+	this->nHaknun = 1234;
+	this->sName = "이사랑";
 	cout << "학번이 등록되었습니다." << endl;
 }
 
 Student::Student(int Hakbun, string Name)
 {
-	nHaknun = Hakbun;
-	sName = Name;
+	this->nHaknun = Hakbun;
+	this->sName = Name;
 	cout << "학번이 등록되었습니다." << endl;
 }
 
