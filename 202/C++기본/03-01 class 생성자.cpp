@@ -15,17 +15,13 @@ public:
 
 int main() 
 {
-	Student stu1 = { 1201,"곽경희" };
-	stu1.show();
-	
-	Student* stu2 = new Student(1202,"권하은");
-	stu2->show();
+	Student* stu = new Student[6];
+	for (int i = 0; i < 6; i++)
+		// 배열이므로 -> 를 쓰지 않고, .으로 멤버접근
+		stu[i].show();
 
-	Student *stu3= new Student();
-	stu3->show();
+	delete[]stu;
 
-	delete stu2;
-	delete stu3;
 	return 0;
 }
 
