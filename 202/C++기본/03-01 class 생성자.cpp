@@ -17,6 +17,7 @@ int main()
 {
 	Student* stu = new Student[6];
 	for (int i = 0; i < 6; i++)
+		// 배열이기때문에 ->이 아닌 .으로 멤버접근
 		stu[i].show();
 
 	delete[]stu;
