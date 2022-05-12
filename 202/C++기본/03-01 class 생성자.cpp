@@ -18,12 +18,14 @@ int main()
 	Student stu1 = { 1201,"°û°æÈñ" };
 	stu1.show();
 	
-	Student stu2 = Student(1202,"±ÇÇÏÀº");
-	stu2.show();
+	Student* stu2 = new Student(1202,"±ÇÇÏÀº");
+	stu2->show();
 
-	Student stu3;
-	stu3.show();
+	Student *stu3= new Student();
+	stu3->show();
 
+	delete stu2;
+	delete stu3;
 	return 0;
 }
 
