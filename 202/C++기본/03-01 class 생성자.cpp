@@ -8,7 +8,11 @@ class Student
 	int nHaknun;
 	char * sName;
 public:
+	//생성자 : 객체가 생성될 때 호출되는 함수
 	Student(int Hakbun, const char* Name);
+	//소멸자 : 객체가 메모리에서 해제될 때 생성되는 함수
+	~Student();
+
 	void show();
 };
 
@@ -27,6 +31,12 @@ Student::Student(int Hakbun, const char* Name)
 	int len = strlen(Name) + 1;	//동적할당할 공간의 크기를 구하고
 	sName = new char[len];		//그 크기만큼 배열로 동적할당
 	strcpy(sName, Name);		// 매개변수에 있는 문자열 복사
+}
+
+Student:: ~Student()
+{
+	delete []sName;
+	cout << "소멸자 호출" << endl;
 }
 
 void Student::show()
