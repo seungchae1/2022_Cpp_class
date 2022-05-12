@@ -1,43 +1,32 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 
 using namespace std;
 
 class Student
 {
 	int nHaknun;
-	string sName;
+	char * sName;
 public:
-	Student();
-	Student(int Hakbun, string Name);
+	Student(int Hakbun, const char* Name);
 	void show();
 };
 
 int main() 
 {
-	Student* stu = new Student[6];
-	for (int i = 0; i < 6; i++)
-		// 배열이기때문에 ->이 아닌 .으로 멤버접근
-		stu[i].show();
-
-	delete[]stu;
+	Student stu1 = Student(1111, "JWP");
+	stu1.show();
 
 	return 0;
 }
 
-Student::Student()
+Student::Student(int Hakbun, const char* Name)
+	:nHaknun(Hakbun)
 {
-	this->nHaknun = 1234;
-	this->sName = "이사랑";
-	cout << "학번이 등록되었습니다." << endl;
-}
-
-Student::Student(int Hakbun, string Name)
-	:nHaknun(Hakbun), sName(Name)
-	// 객체생서과 동시에 멤버변수 초기화	// 멤버변수(매개변수)
-	// const/참조형 멤버변수를 사용할 수 있다.
-{
-	cout << "학번이 등록되었습니다." << endl;
+	cout << "일반생성자 생성" << endl;
+	int len = strlen(Name) + 1;	//동적할당할 공간의 크기를 구하고
+	sName = new char[len];		//그 크기만큼 배열로 동적할당
+	strcpy(sName, Name);		// 매개변수에 있는 문자열 복사
 }
 
 void Student::show()
