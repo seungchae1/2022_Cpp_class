@@ -1,9 +1,9 @@
 class CBox {
-private:
+public: //protected // 값을 바꿔주는 함수를 선언
 	double width;
 };
 
-class ChildBox : CBox {
+class ChildBox : public CBox {
 public:
 	void setWidth(double w) {
 		width = w;
