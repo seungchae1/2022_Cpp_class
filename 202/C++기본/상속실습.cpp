@@ -30,7 +30,7 @@ void Person::hi()
 }
 
 //자식 클래스
-class Student :public Person 
+class Student :private Person 
 {
 	int nHakbun;
 public:
@@ -58,7 +58,7 @@ int main()
 	person->hi();
 
 	Student student;
-	student.study();
+	student.hi();
 
 	return 0;
 }
