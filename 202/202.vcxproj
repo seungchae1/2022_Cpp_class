@@ -28,6 +28,7 @@
     </ClCompile>
     <ClCompile Include="C++기본\상속실습.cpp" />
     <ClCompile Include="C++기본\상속실습2.cpp" />
+    <ClCompile Include="C++기본\상속실습3.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
