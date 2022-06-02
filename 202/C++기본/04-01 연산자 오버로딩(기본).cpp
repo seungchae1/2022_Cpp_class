@@ -32,7 +32,10 @@ int main()
 	Point p2(3, 4);
 
 	Point sum = p1 + p2;
+
 	p1.print();
+	p2.print();
+	sum.print();
 
 	return 0;
 }
