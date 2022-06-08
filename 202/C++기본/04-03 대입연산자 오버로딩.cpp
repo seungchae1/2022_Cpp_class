@@ -22,9 +22,13 @@ public:
 	Student& operator=(const Student& rhs) 
 	{
 		cout << "대입연산자 호출" << endl;
+		//기존에 존재하는 공간을 제거하고 새 공간 할당준비
+		delete[]sName;
+
 		int len = strlen(rhs.sName) + 1;
 		sName = new char[len];
 		strcpy(sName, rhs.sName);
+		nHakbun = rhs.nHakbun;
 
 		return *this;
 
