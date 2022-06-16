@@ -19,20 +19,7 @@ public:
 	~Student();
 
 	//연산자 오버로딩
-	Student& operator=(const Student& rhs) 
-	{
-		cout << "대입연산자 호출" << endl;
-		//기존에 존재하는 공간을 제거하고 새 공간 할당준비
-		delete[]sName;
-
-		int len = strlen(rhs.sName) + 1;
-		sName = new char[len];
-		strcpy(sName, rhs.sName);
-		nHakbun = rhs.nHakbun;
-
-		return *this;
-
-	}
+	Student& operator=(const Student& rhs);
 
 	void show(void);
 };
@@ -48,14 +35,14 @@ int main(void)
 	Student stu2 = stu1;
 
 	//대입연산자 호출
-	stu1.operator=(stu3);
-	stu1.show();		//(2222, "JYP")
+	stu1 = stu3;	//stu1.operator=(stu3);
+	stu1.show();	//stu1.show();		//(2222, "JYP")
 
-	stu1.show();
-	stu2.show();
+	for (int i = 0; i < 1000000; i++) {
+		Student* s = new Student(i, "JWP");
+		delete s;
+	}
 
-	stu1.~Student();
-	stu2.~Student();
 
 	return 0;
 }
@@ -82,6 +69,21 @@ Student::Student(const Student& rhs)
 	this->nHakbun = rhs.nHakbun;
 
 	cout << "복사생성자 호출" << endl;
+}
+
+Student& Student::operator=(const Student& rhs)
+{
+	cout << "대입연산자 호출" << endl;
+	//기존에 존재하는 공간을 제거하고 새 공간 할당준비
+	delete[]sName;
+
+	int len = strlen(rhs.sName) + 1;
+	sName = new char[len];
+	strcpy(sName, rhs.sName);
+	nHakbun = rhs.nHakbun;
+
+	return *this;
+
 }
 
 Student::~Student()
