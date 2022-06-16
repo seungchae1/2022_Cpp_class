@@ -42,6 +42,9 @@
     <ClCompile Include="C++기본\04-03 대입연산자 오버로딩.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="C++기본\풀어보기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C++기본\04-01.h">
