@@ -1,41 +1,117 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
-class m_string 
+class String
 {
 private:
-	const char * _Myptr;	//실제 문자열의 시작주소를 담고 있는 포인터
-	int _Mysize;	//문자열의 글자수
+	int len;
+	char* str;
 public:
-	m_string(const char * str)
-		:_Myptr(str)
-	{
-		_Mysize = 0;
-		for (int i = 0; str[i] != '\0'; i++)
-		{
-			_Mysize++;
-		};
-	}
-	int size()			//문자열의 글자수를 반환
-	{
-		return _Mysize;
-	}
-	int length()	//문자열의 글자수를 반환 
-	{
-		return _Mysize;
-	}
-	const char ** c_str() 		//문자열의 시작주소를 반환
-	{
-		const char** ptr = &(_Myptr);
-		return ptr;
-	}
+	String();
+	String(const char* _str);
+	String(const String& _str);
+	~String();
+	String& operator= (const String& _str);
+	String& operator+= (const String& _str);
+	bool operator== (const String& _str);
+	String operator+(const String& _str);
+
+	friend ostream& operator<< (ostream& os, const String& _str);
+	friend istream& operator>> (istream& is, String& _str);
 };
+
+String::String()
+{
+	len = 0;
+	str = NULL;
+
+}
+
+String::String(const char* _str)
+{
+	len = strlen(_str) + 1;
+	str = new char[len];
+	strcpy(str, _str);
+
+}
+
+String::String(const String& _str)
+{
+	len = _str.len;
+	str = new char[len];
+	strcpy(str, _str.str);
+}
+
+String::~String()
+{
+	if (str != NULL)
+		delete[]str;
+
+}
+
+String& String::operator= (const String& _str)
+{
+	if (str != NULL)
+		delete[]str;
+	len = _str.len;
+	str = new char[len];
+	strcpy(str, _str.str);
+	return *this;
+}
+
+String& String::operator+= (const String& _str)
+{
+	char* temp = new char[len + _str.len - 1];
+	strcpy(temp, str);
+	strcat(temp, _str.str);
+
+	if (str != NULL)
+		delete[]str;
+	str = temp;
+	return *this;
+}
+
+bool String::operator== (const String& _str)
+{
+	return strcmp(str, _str.str) ? false : true;
+}
+
+String String::operator+ (const String& _str)
+{
+	char* temp = new char[len + _str.len - 1];
+	strcpy(temp, str);
+	strcat(temp, _str.str);
+
+	String result(temp);
+	delete[]temp;
+
+	return result;
+}
+
+
+ostream& operator<< (ostream& os, const String& _str)
+{
+	os << _str.str;
+	return os;
+}
+
+istream& operator>> (istream& is, String& _str)
+{
+	char str[100];
+	is >> str;
+	_str = String(str);
+	return is;
+}
+
 
 int main()
 {
-	m_string str1 = "123";
-	cout << str1 << " " << str1.size() << endl;
+	String str1 = "123";
+	cout << str1 << " " << endl;
+	String str2 = str1;
+	cout << str2 << " " << endl;
 
 	return 0;
 }
