@@ -56,6 +56,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="C++기본\00 - 클래스 설계_2208박승채.h" />
     <ClInclude Include="C++기본\04-01.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -53,5 +53,8 @@
     <ClInclude Include="C++기본\04-01.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="C++기본\00 - 클래스 설계_2208박승채.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
