@@ -48,7 +48,7 @@
     <ClCompile Include="test.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="C++기본\00 - 1학기 수행평가3_2208박승채.cpp">
+    <ClCompile Include="C++기본\수행평가3_2208박승채.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
