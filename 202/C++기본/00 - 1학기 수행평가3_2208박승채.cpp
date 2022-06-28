@@ -98,24 +98,12 @@ m_string m_string:: operator+(const char* str) //문자열에 대한 덧셈연�
 
 int m_string:: operator==(const m_string& str) //m_string에 대한 비교연산자
 {
-	if (_Mysize == str._Mysize)
-	{
-		if (strcmp(_Myptr, str._Myptr))
-		{
-			return 0;
-		}
-	}
+	if (strcmp(_Myptr, str._Myptr)==0) return 0;
 	else return -1;
 }
 int m_string:: operator==(const char* str) //문자열에 대한 비교연산자
 {
-	if (_Mysize == strlen(str))
-	{
-		if (strcmp(_Myptr, str))
-		{
-			return 0;
-		}
-	}
+	if (strcmp(_Myptr, str) == 0) return 0;
 	else return -1;
 }
 
@@ -138,7 +126,7 @@ int main(void)
 	cout << str2 << " " << str2.size() << endl;
 
 	cout << (str1 == "123") << endl;
-	cout << (str1 == str2) << endl;
+	cout << (str2 == str1) << endl;
 
 	//c_str() 테스트
 	//cout << (str1.c_str()) << endl;
