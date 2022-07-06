@@ -14,7 +14,7 @@ public:
 
 	int size();
 	int length();
-	char** c_str();
+	char* c_str();
 
 	//연산자 오버로딩
 	m_string operator=(const m_string& str);
@@ -59,13 +59,15 @@ int m_string::length()
 	return _Mysize;
 }
 
-char** m_string::c_str()
+char* m_string::c_str()
 {
-	return &_Myptr;
+	return _Myptr;
 }
 
 m_string m_string:: operator=(const char* str) //문자열에 대한 대입연산자
 {
+	delete[] _Myptr;
+
 	_Mysize = strlen(str);
 	_Myptr = new char[_Mysize + 1];
 	strcpy(_Myptr, str);
@@ -73,6 +75,8 @@ m_string m_string:: operator=(const char* str) //문자열에 대한 대입연�
 }
 m_string m_string:: operator=(const m_string& str) //m_string에 대한 대입연산자
 {
+	delete[] _Myptr;
+
 	_Mysize = str._Mysize;
 	_Myptr = new char[_Mysize + 1];
 	strcpy(_Myptr, str._Myptr);
@@ -82,17 +86,17 @@ m_string m_string:: operator=(const m_string& str) //m_string에 대한 대입�
 m_string m_string:: operator+(const m_string& str) //m_string에 대한 덧셈연산자
 {
 	int len= _Mysize + str._Mysize;
-	char* a = new char[len + 1];
-	strcpy(a, _Myptr);
-	strcat(a, str._Myptr);
+	m_string a = new char[len + 1];
+	strcpy(a._Myptr, _Myptr);
+	strcat(a._Myptr, str._Myptr);
 	return a;
 }
 m_string m_string:: operator+(const char* str) //문자열에 대한 덧셈연산자
 {
 	int len = _Mysize + strlen(str);
-	char* a = new char[len + 1];
-	strcpy(a, _Myptr);
-	strcat(a, str);
+	m_string a = new char[len + 1];
+	strcpy(a._Myptr, _Myptr);
+	strcat(a._Myptr, str);
 	return a;
 }
 
@@ -128,9 +132,6 @@ int main(void)
 	cout << (str1 == "123") << endl;
 	cout << (str2 == str1) << endl;
 
-	//c_str() 테스트
-	//cout << (str1.c_str()) << endl;
-	//cout << (str2.c_str()) << endl;
 
 	return 0;
 }
