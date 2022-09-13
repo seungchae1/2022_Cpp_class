@@ -3,14 +3,10 @@
 
 using namespace std;
 
-int sum(int a, int b)
+template <typename T>
+T sum(T a, T b)
 {
-	return a + b;
-}
-
-string sum(string a, string b)
-{
-	return a + b;
+	return a, b;
 }
 
 int main()
