@@ -25,7 +25,7 @@ int main()
 	mydata1.setData(5);
 	cout << mydata1.getData() << endl;
 
-	mydata1.setData(8.66);
+	mydata2.setData(8.66);
 	cout << mydata2.getData() << endl;
 	
 	return 0;

@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C++기본\07-01 함수템플릿.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="C++기본\함수템플릿 실습.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="C++기본\07-02 클래스템플릿.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
