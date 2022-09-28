@@ -18,10 +18,12 @@ int main()
 	//기존공간에 크기를 확장하여 삽입
 	s3.push_back("ab");
 
-	//vector의 원소들 출력
-	for (int i = 0; i < s3.size(); i++)
+	vector<string>::iterator iter;
+
+	//vector의 원소들 출력(iterator)
+	for (iter = s3.begin(); iter != s3.end(); iter++)
 	{
-		cout << s3[i] << " " ;
+		cout << *iter << " " ;
 	}
 	cout << endl;
 
@@ -29,9 +31,9 @@ int main()
 	s3[1] = "cd";
 	s3.at(2) = "ef";
 
-	for (int i = 0; i < s3.size(); i++)
+	for (iter = s3.begin(); iter != s3.end(); iter++)
 	{
-		cout << s3[i] << " ";
+		cout << *iter << " ";
 	}
 	cout << endl;
 
