@@ -3,11 +3,12 @@
 
 using namespace std;
 
-class player 
+template <typename T ,typename T2>
+class player
 {
 public:
-	const char* name;
-	player(const char * name, int stamina, int attack, int defend)
+	T2 name;
+	player(T2 name, T stamina, T attack, T defend)
 		:stamina(stamina), attack(attack), defend(defend)
 	{
 		this->name = name;
@@ -18,19 +19,19 @@ public:
 		cout << "공격 : " << attack << endl;
 		cout << "방어 : " << defend << endl;
 	}
-	~player() 
+	~player()
 	{
 		delete[] name;
 	}
 private:
-	int stamina;
-	int attack;
-	int defend;
+	T stamina;
+	T attack;
+	T defend;
 };
 
 int main()
 {
-	player * p1 = new player("A", 300, 55, 30);
+	player<int, string> * p1 = new player<int, string>("User", 300, 55, 30);
 	p1->getAll();
 	return 0;
 }
