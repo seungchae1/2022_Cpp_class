@@ -30,5 +30,8 @@
     <ClCompile Include="C++기본\08-02 map.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="C++기본\map 실습.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
