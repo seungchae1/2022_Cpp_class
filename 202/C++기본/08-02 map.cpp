@@ -30,5 +30,8 @@ int main()
 		cout << iter->first << "¿ª " << iter->second << "´Ô"<< endl;
 	}
 
+	map<string, string>::iterator actor = m.find("±è½Å");
+	cout << "ÁÖÀÎ°øÀº " << actor->second << endl;
+
 	return 0;
 }
