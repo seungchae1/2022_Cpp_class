@@ -12,5 +12,11 @@ int main()
 		cout << arr[i] <<"\t";
 	}
 
+	//범위기반 for문
+	for (double x : arr)
+	{
+		cout << x << "\t";
+	}
+
 	return 0;
 }
