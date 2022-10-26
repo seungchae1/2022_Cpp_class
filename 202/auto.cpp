@@ -23,9 +23,10 @@ int main()
 	
 	//map은 데이터를 삽입할 때마다 key를 기준으로 자동정렬된다.
 
-	map<string, string>::iterator iter;
+	//map<string, string>::iterator iter;
+	//auto iter; => error (auto 할당하는 값으로 자료형을 알 수 있음)
 
-	for (auto iter = m.begin(); iter != m.end(); iter++)
+	for (auto iter = m.begin(); iter != m.end(); iter++) //iter앞에 auto 추가
 	{
 		cout << iter->first << "역 " << iter->second << "님" << endl;
 	}
