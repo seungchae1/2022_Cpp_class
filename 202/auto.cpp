@@ -26,9 +26,9 @@ int main()
 	//map<string, string>::iterator iter;
 	//auto iter; => error (auto 할당하는 값으로 자료형을 알 수 있음)
 
-	for (auto iter = m.begin(); iter != m.end(); iter++) //iter앞에 auto 추가
+	for (auto& x : m) //iter앞에 auto 추가	//범위기반 for문으로 변경
 	{
-		cout << iter->first << "역 " << iter->second << "님" << endl;
+		cout << x.first << "역 " << x.second << "님" << endl;
 	}
 
 	cout << "주인공은 " << m["김신"] << endl;
