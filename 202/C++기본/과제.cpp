@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <map>
 
 using namespace std;
 
@@ -11,11 +12,6 @@ enum Department {
 };
 
 void a(void);
-
-auto b(int n){
-	if (n % 2 == 0)return "짝수입니다";
-	else return "홀수입니다";
-}
 
 int main()
 {
@@ -36,7 +32,15 @@ int main()
 		cout << a << endl;
 
 	//3 auto가 실질적으로 사용되는 예시코드
-	cout << b(3);
+	map<string, int> m;
+	m["software"] = 28;
+	m["websolution"] = 26;
+	m["design"] = 33;
+
+	for (auto& n : m) {
+		cout << n.first << "과의 학생수는 " << n.second << "명" <<endl;
+	}
+
 
 	//4 코드 문제점 설명 및 해결
 	/*
@@ -63,6 +67,10 @@ int main()
 
 	//7. static 멤버함수의 특징을 설명하시오
 	// 클래스에 하나만 존재하여 객체마다 따로 사용하지 않고 공유한다. 클래스 이름으로 호출이 가능하다.
+	//++ 추가
+	//객체를 생성하지 않고 사용할 수 있다
+	//static 멤버 변수만 접근할 수 있다
+
 }
 
 class Champ
