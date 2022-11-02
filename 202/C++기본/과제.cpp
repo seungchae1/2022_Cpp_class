@@ -16,6 +16,7 @@ auto b(int n){
 	if (n % 2 == 0)return "짝수입니다";
 	else return "홀수입니다";
 }
+
 int main()
 {
 	//1 enum 예제
@@ -60,6 +61,8 @@ int main()
 	//6. mCount의 최종값은 ?
 		//3
 
+	//7. static 멤버함수의 특징을 설명하시오
+	// 클래스에 하나만 존재하여 객체마다 따로 사용하지 않고 공유한다. 클래스 이름으로 호출이 가능하다.
 }
 
 class Champ
