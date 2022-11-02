@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -26,4 +27,25 @@ int main()
 	int arr[] = { 10, 20, 30, 40 };
 	for (int a : arr)
 		cout << a << endl;
+
+	//  auto가 실질적으로 사용되는 예시코드 작성
+
+	//4 코드 문제점 설명 및 해결
+	/*
+		int arr[] = { 10, 20, 30, 40};
+		for (auto x : arr)
+			x = x + 1;
+	*/
+	int arr2[] = { 10, 20, 30, 40 };
+	for (auto x : arr2)
+		x = x + 1;
+	for (int i = 0; i < 4; i++) cout << arr2[i] << "\t";
+	// x는 arr 자체를 할당 받기 때문에 x를 변경하여도 arr의 값은 변하지 않는다
+	// x를 포인터로 변경
+	for (auto& x : arr2)
+		x = x + 1;
+	for (int i = 0; i < 4; i++) cout << endl<< arr2[i] << "\t";
+
+
+
 }
