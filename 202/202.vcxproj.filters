@@ -45,5 +45,8 @@
     <ClCompile Include="C++기본\과제.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="C++기본\09-03 static 멤버.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
